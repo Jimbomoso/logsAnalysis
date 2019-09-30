@@ -139,4 +139,11 @@ def get_most_popular_three_articles_of_all_time():
     conn.close()
     return results
 
-    
+def get_most_popular_article_authors_of_all_time():
+    """Return most popular article authors of all time."""
+    conn = psycopg2.connect("dbname=news")
+    cur = conn.cursor()
+    cur.execute(most_popular_article_authors_of_all_time)
+    results = cur.fetchall()
+    conn.close()
+    return results
