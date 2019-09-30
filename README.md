@@ -26,8 +26,12 @@ This is a project from my [Udacity Full Stack Development Nanodegree Program.][1
 
 > In this project, you'll work with data that could have come from a real-world web application, with fields representing information that a web server would record, such as HTTP status codes and URL paths. The web server and the reporting tool both connect to the same database, allowing information to flow from the web server into the report.
 
-
-
 ---
+## How to use:
 
+1. Install PostgreSQL and Python if not installed
+2. Load newsdata.sql into PostgreSQL database
+3. Copy report.py and newsdb.py locally
+4. Run report.py
+   
 [1]: [http:udacity.com](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044)

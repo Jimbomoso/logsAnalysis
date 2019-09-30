@@ -1,3 +1,4 @@
+#python3
 import newsdb
 
 LINE = ''' * '%s' - %s %s'''
