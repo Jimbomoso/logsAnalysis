@@ -84,3 +84,48 @@ group by
 order by
   views desc;
 '''
+
+days_which_more_than_1percent_of_requests_lead_to_errors = '''
+select
+  c.date as date,
+  c.errors_percentage
+from
+  (
+    select
+      a.date,
+      a.good_requests + b.bad_requests as total_requests,
+      a.good_requests,
+      b.bad_requests,
+      ROUND(((100.0 * b.bad_requests)/(a.good_requests + b.bad_requests)), 2) \
+        as errors_percentage
+    from
+        (
+          select
+            TO_CHAR(time, 'Mon DD, YYYY') as date,
+            count(*) as good_requests
+          from
+            log
+          where
+            status like '2%'
+          group by
+            TO_CHAR(time, 'Mon DD, YYYY')
+        ) a
+      join
+        (
+          select
+            TO_CHAR(time, 'Mon DD, YYYY') as date,
+            count(*) as bad_requests
+          from
+            log
+          where
+            status like '4%'
+          group by
+            TO_CHAR(time, 'Mon DD, YYYY')
+        ) b
+      on a.date = b.date
+    order by
+      errors_percentage desc
+  ) c
+where
+  c.errors_percentage >= 1;
+'''
