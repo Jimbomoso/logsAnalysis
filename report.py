@@ -17,5 +17,5 @@ if __name__ == '__main__':
     print("3. On which days did more than 1% of requests lead to errors? ")
     posts = "".join(LINE % (date, percentage, "errors") for
                     date, percentage in newsdb.
-                    get_days_where_1percent_plus_of_requests_lead_to_errors())
+                    get_days_where_1_percent_plus_of_requests_lead_to_errors())
     print(posts)

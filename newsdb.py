@@ -87,7 +87,7 @@ order by
   views desc;
 '''
 
-days_which_more_than_1percent_of_requests_lead_to_errors = '''
+days_which_more_than_1_percent_of_requests_lead_to_errors = '''
 select
   c.date as date,
   c.errors_percentage
