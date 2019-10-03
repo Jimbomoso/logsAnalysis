@@ -150,7 +150,7 @@ def get_most_popular_article_authors_of_all_time():
     conn.close()
     return results
 
-def get_days_where_1percent_plus_of_requests_lead_to_errors():
+def get_days_where_1_percent_plus_of_requests_lead_to_errors():
     """Return days which more than 1% of requests lead to errors."""
     conn = psycopg2.connect("dbname=news")
     cur = conn.cursor()
