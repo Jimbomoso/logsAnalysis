@@ -29,10 +29,14 @@ This is a project from my [Udacity Full Stack Development Nanodegree Program.][1
 ---
 ## How to use:
 
-1. Install PostgreSQL and Python if not installed
-2. Load newsdata.sql into PostgreSQL database
-3. Copy report.py and newsdb.py locally
-4. Run report.py
+1. Install [PostgreSQL][2] and [Python][3] if not installed
+2. Download report.py, newsdb.py and newsdata.sql into a local folder
+3. Load newsdata.sql into PostgreSQL database by typing this in the terminal: 
+   
+    `psql -d news -f newsdata.sql`
+4. Run report.py by typing this in the terminal: 
+   
+    `python3 reporty.py`
 
 ### Result:
 
@@ -47,7 +51,9 @@ Report printed:
     * "Rudolf von Treppenwitz" - 423457 views
     * "Anonymous Contributor" - 170098 views
     * "Markoff Chaney" - 84557 views
-3. On which days did more than 1% of requests lead to errors?
+1. On which days did more than 1% of requests lead to errors?
     * "Jul 17, 2016" - 2.26 errors
   
 [1]: [http:udacity.com](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044)
+[2]: [https://www.postgresql.org/download/]
+[3]: [https://www.python.org/downloads/release/python-374/]
