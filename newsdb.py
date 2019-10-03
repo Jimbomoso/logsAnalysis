@@ -154,7 +154,7 @@ def get_days_where_1percent_plus_of_requests_lead_to_errors():
     """Return days which more than 1% of requests lead to errors."""
     conn = psycopg2.connect("dbname=news")
     cur = conn.cursor()
-    cur.execute(days_which_more_than_1percent_of_requests_lead_to_errors)
+    cur.execute(days_which_more_than_1_percent_of_requests_lead_to_errors)
     results = cur.fetchall()
     conn.close()
     return results
