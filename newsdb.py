@@ -132,6 +132,7 @@ where
   c.errors_percentage >= 1;
 '''
 
+
 def get_most_popular_three_articles_of_all_time():
     """Return what are the most popular three articles of all time."""
     conn = psycopg2.connect("dbname=news")
@@ -141,6 +142,7 @@ def get_most_popular_three_articles_of_all_time():
     conn.close()
     return results
 
+
 def get_most_popular_article_authors_of_all_time():
     """Return most popular article authors of all time."""
     conn = psycopg2.connect("dbname=news")
@@ -149,6 +151,7 @@ def get_most_popular_article_authors_of_all_time():
     results = cur.fetchall()
     conn.close()
     return results
+
 
 def get_days_where_1_percent_plus_of_requests_lead_to_errors():
     """Return days which more than 1% of requests lead to errors."""
